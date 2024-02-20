@@ -24,7 +24,11 @@ return {
         },
         -- ensure these language parsers are installed
         ensure_installed = {
+          "c",
+          "diff",
+          "jsdoc",
           "json",
+          "jsonc",
           "javascript",
           "typescript",
           "tsx",
@@ -32,16 +36,23 @@ return {
           "html",
           "css",
           "prisma",
+          "python",
           "markdown",
           "markdown_inline",
+          "sql",
           "svelte",
           "graphql",
           "bash",
           "lua",
+          "luadoc",
+          "luap",
           "vim",
+          "vimdoc",
           "dockerfile",
           "gitignore",
           "query",
+          "regex",
+          "toml",
         },
         incremental_selection = {
           enable = true,
@@ -55,7 +66,7 @@ return {
       })
 
       -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-      require('ts_context_commentstring').setup {}
+      require("ts_context_commentstring").setup({})
     end,
   },
 }
