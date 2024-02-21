@@ -16,18 +16,25 @@ return {
 
     local lspkind = require("lspkind")
 
+    local compare = cmp.config.compare
+
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
+
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
+
+      -- snippet
       snippet = { -- configure how nvim-cmp interacts with snippet engine
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
+      -- keymapping
       mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -56,6 +63,7 @@ return {
           end
         end, { "i", "s" }),
       }),
+
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
@@ -64,6 +72,7 @@ return {
         { name = "path" }, -- file system paths
         { name = "vim-dadbod-completion" }, -- SQL server autocompletion
       }),
+
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
