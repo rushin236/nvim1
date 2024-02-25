@@ -12,7 +12,7 @@ return {
     { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete buffers to the right" },
     { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete buffers to the left" },
     { "<leader>bs", "<Cmd>BufferLinePick<CR>", desc = "Selete buffers" },
-    { "<leader>bd", "<Cmd>BufferLinePickClose<CR>", desc = "Select and Delete buffers" },
+    { "<leader>bd", "<Cmd>bdelete<cr>", desc = "Delete Current buffer" },
     { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
     { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
     { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
@@ -25,7 +25,7 @@ return {
       -- stylua: ignore
       right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
       diagnostics = "nvim_lsp",
-      always_show_bufferline = false,
+      always_show_bufferline = true,
       offsets = {
         {
           filetype = "NvimTree",
