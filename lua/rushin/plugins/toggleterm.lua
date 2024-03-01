@@ -7,7 +7,7 @@ return {
     toggleterm.setup({
       shell = "pwsh.exe",
       size = 15,
-      open_mapping = [[<C-t>]],
+      open_mapping = [[<leader>ot]],
       hide_numbers = true,
       shade_filetypes = {},
       shade_terminals = true,
