@@ -49,9 +49,9 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "pylint", -- python linter
         "eslint_d", -- js linter
-        "ruff",
+        "ruff", -- python linter
+        -- "pylint", -- python linter
       },
     })
   end,
